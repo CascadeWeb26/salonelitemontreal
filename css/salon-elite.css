@@ -348,13 +348,34 @@ h1,h2,h3,.disp{font-family:"Bodoni Moda","Didot",Georgia,serif;font-weight:500;
   .head h2{font-size:clamp(36px,10.5vw,58px)}
   .head .meta{font-size:14px}
 
-  /* hero — scale down type to fit */
+  /* hero — tighter vertical space, photo below text */
+  .hero{min-height:auto}
+  .hero-inner{
+    min-height:auto;
+    justify-content:flex-start;
+    padding:clamp(88px,22vw,114px) 0 52px
+  }
   .hero-type .w-salon b{font-size:clamp(46px,13vw,78px)}
   .hero-type .w-mtl b{font-size:clamp(38px,10.5vw,66px)}
   .w-elite{font-size:clamp(58px,16vw,96px);margin-left:1vw}
+  .hero-photo{
+    display:block;
+    position:static;
+    width:58%;
+    max-width:240px;
+    aspect-ratio:3/4;
+    height:auto;
+    margin:24px 0 0;
+    transform:none;
+    animation:none;
+    box-shadow:14px 20px 50px -24px rgba(58,44,42,.55)
+  }
   .hero-foot{
-    position:absolute;bottom:24px;flex-direction:column;
-    align-items:flex-start;gap:10px
+    position:static;
+    margin-top:22px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px
   }
   .hero-foot .est{font-size:10px;letter-spacing:.12em;line-height:1.9}
   .scrollcue{display:none}
@@ -388,10 +409,9 @@ h1,h2,h3,.disp{font-family:"Bodoni Moda","Didot",Georgia,serif;font-weight:500;
   .apropos .ap-text{padding:36px 0 0}
   .apropos .quote{font-size:clamp(22px,6.5vw,34px)}
   .signature{font-size:20px}
-  .stats{flex-wrap:wrap}
-  .stat{flex:1 0 50%;padding:18px 0;border-bottom:1px solid var(--line)}
-  .stat:last-child{border-right:0}
-  .stat b{font-size:34px}
+  .stats{flex-wrap:nowrap}
+  .stat{flex:1;padding:16px 0}
+  .stat b{font-size:26px}
   .stat span{font-size:10px}
 
   /* témoignages */
