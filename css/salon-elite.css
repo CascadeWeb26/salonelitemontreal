@@ -344,9 +344,9 @@ h1,h2,h3,.disp{font-family:"Bodoni Moda","Didot",Georgia,serif;font-weight:500;
   /* layout */
   .section{padding:72px 0}
   .wrap{width:min(1280px,91vw)}
-  .head{margin-bottom:44px}
+  .head{margin-bottom:44px;gap:16px}
   .head h2{font-size:clamp(36px,10.5vw,58px)}
-  .head .meta{font-size:14px}
+  .head .meta{font-size:14px;padding-top:12px}
 
   /* hero — tighter vertical space, photo below text */
   .hero{min-height:auto}
@@ -370,6 +370,11 @@ h1,h2,h3,.disp{font-family:"Bodoni Moda","Didot",Georgia,serif;font-weight:500;
     animation:none;
     box-shadow:14px 20px 50px -24px rgba(58,44,42,.55)
   }
+  .hero-photo::after{
+    background:rgba(0,0,0,.25);
+    mix-blend-mode:normal;
+    opacity:1
+  }
   .hero-foot{
     position:static;
     margin-top:22px;
@@ -392,7 +397,7 @@ h1,h2,h3,.disp{font-family:"Bodoni Moda","Didot",Georgia,serif;font-weight:500;
   .menu li{grid-template-columns:1fr auto;gap:8px;padding:12px 0}
   .m-dur{display:none}
   .m-name{font-size:15.5px}
-  .m-price{font-size:17px}
+  .m-price{font-size:17px;white-space:nowrap}
   .menu-foot{font-size:10px}
 
   /* boutique — single column */
