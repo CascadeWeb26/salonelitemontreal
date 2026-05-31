@@ -348,40 +348,39 @@ h1,h2,h3,.disp{font-family:"Bodoni Moda","Didot",Georgia,serif;font-weight:500;
   .head h2{font-size:clamp(36px,10.5vw,58px)}
   .head .meta{font-size:14px;padding-top:12px}
 
-  /* hero — tighter vertical space, photo below text */
-  .hero{min-height:auto}
-  .hero-inner{
-    min-height:auto;
-    justify-content:flex-start;
-    padding:clamp(88px,22vw,114px) 0 52px
-  }
-  .hero-type .w-salon b{font-size:clamp(46px,13vw,78px);color:var(--cream);text-shadow:0 1px 6px rgba(58,44,42,.45)}
-  .hero-type .w-mtl b{font-size:clamp(38px,10.5vw,66px);text-shadow:0 1px 3px rgba(58,44,42,.3)}
-  .w-elite{font-size:clamp(58px,16vw,96px);margin-left:1vw;text-shadow:0 1px 3px rgba(58,44,42,.3)}
+  /* hero — stacked layout: full-bleed photo top 60%, text on cream below */
+  .hero{min-height:auto;overflow:hidden}
+  .hero::before{display:none}
+  .hero-inner{min-height:auto;justify-content:flex-start;padding:0}
+
+  /* Photo: reorder to top, break out of constrained container to true full-width */
   .hero-photo{
+    order:-1;
     display:block;
-    position:static;
-    width:58%;
-    max-width:240px;
-    aspect-ratio:3/4;
-    height:auto;
-    margin:24px 0 0;
-    transform:none;
+    position:relative;
+    left:50%;
+    transform:translateX(-50%);
+    width:100vw;
+    max-width:none;
+    height:60svh;
+    aspect-ratio:auto;
+    margin:0;
     animation:none;
-    box-shadow:14px 20px 50px -24px rgba(58,44,42,.55)
+    box-shadow:none
   }
-  .hero-photo::after{
-    background:linear-gradient(to top,var(--cream) 0%,rgba(251,246,241,.55) 22%,transparent 48%);
-    mix-blend-mode:normal;
-    opacity:1
-  }
-  .hero-foot{
-    position:static;
-    margin-top:22px;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:10px
-  }
+  /* remove the blush duotone overlay — portrait reads in natural tones here */
+  .hero-photo::after{background:transparent;opacity:0}
+
+  /* Type: below photo on the warm cream background, dark ink */
+  .hero-type{padding:clamp(24px,6vw,38px) 0 0}
+  .hero-type .w-salon{position:static}
+  .hero-type .w-salon b{font-size:clamp(46px,13vw,78px);color:var(--ink);text-shadow:none}
+  .hero-type .w-mtl b{font-size:clamp(38px,10.5vw,66px);text-shadow:none}
+  .w-elite{font-size:clamp(58px,16vw,96px);margin-left:1vw;text-shadow:none}
+
+  /* Footer lines: sit below the type, natural flow */
+  .hero-foot{position:static;z-index:auto;margin-top:16px;padding-bottom:36px;
+    flex-direction:column;align-items:flex-start;gap:8px}
   .hero-foot .est{font-size:10px;letter-spacing:.12em;line-height:1.9}
   .scrollcue{display:none}
 
