@@ -355,9 +355,9 @@ h1,h2,h3,.disp{font-family:"Bodoni Moda","Didot",Georgia,serif;font-weight:500;
     justify-content:flex-start;
     padding:clamp(88px,22vw,114px) 0 52px
   }
-  .hero-type .w-salon b{font-size:clamp(46px,13vw,78px)}
-  .hero-type .w-mtl b{font-size:clamp(38px,10.5vw,66px)}
-  .w-elite{font-size:clamp(58px,16vw,96px);margin-left:1vw}
+  .hero-type .w-salon b{font-size:clamp(46px,13vw,78px);color:var(--cream);text-shadow:0 1px 6px rgba(58,44,42,.45)}
+  .hero-type .w-mtl b{font-size:clamp(38px,10.5vw,66px);text-shadow:0 1px 3px rgba(58,44,42,.3)}
+  .w-elite{font-size:clamp(58px,16vw,96px);margin-left:1vw;text-shadow:0 1px 3px rgba(58,44,42,.3)}
   .hero-photo{
     display:block;
     position:static;
@@ -371,7 +371,7 @@ h1,h2,h3,.disp{font-family:"Bodoni Moda","Didot",Georgia,serif;font-weight:500;
     box-shadow:14px 20px 50px -24px rgba(58,44,42,.55)
   }
   .hero-photo::after{
-    background:rgba(0,0,0,.25);
+    background:linear-gradient(to top,var(--cream) 0%,rgba(251,246,241,.55) 22%,transparent 48%);
     mix-blend-mode:normal;
     opacity:1
   }
